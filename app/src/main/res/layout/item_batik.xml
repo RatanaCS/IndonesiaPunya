@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="220dp">
+    
+    <ImageView
+        android:id="@+id/ivBatik"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"/>
+
+    <View
+        android:background="@drawable/bg_transparant_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/tvNamaBatik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Batik"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:textColor="@android:color/white"
+        android:layout_above="@+id/tvDaerahBatik"/>
+
+    <TextView
+        android:id="@+id/tvDaerahBatik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daerah Asal batik"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:layout_alignParentBottom="true"/>
+
+
+
+</RelativeLayout>
