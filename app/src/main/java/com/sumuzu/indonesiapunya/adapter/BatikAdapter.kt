@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.sumuzu.indonesiapunya.R
+import com.sumuzu.indonesiapunya.batik.BatikActivity
 import com.sumuzu.indonesiapunya.batik.DetailBatikActivity
 import com.sumuzu.indonesiapunya.model.Batik
 import kotlinx.android.synthetic.main.item_batik.view.*
@@ -43,6 +44,8 @@ class BatikAdapter(var data: ArrayList<Batik>?) :RecyclerView.Adapter<BatikAdapt
             intent.putExtra("hTinggi", data?.get(position)?.harga_tinggi.toString() )
 
             holder.itemView.context.startActivity(intent)
+
+
 
 
         }

@@ -73,33 +73,7 @@ class MuseumActivity : AppCompatActivity() {
 
     }
 
-    private fun showFilterMuseum(search: String) {
-        //filter
-        ConfigNetwork.getRetrofitMuseum().getFilterMuseum("$search").enqueue(object : Callback<ResponseMuseumServer>{
-            override fun onResponse(
-                call: Call<ResponseMuseumServer>,
-                response: Response<ResponseMuseumServer>
-            ) {
-                Log.d("response server Museum", response.message())
 
-                progress.visibility = View.GONE
-
-                if(response.isSuccessful) {
-
-                    val data: ArrayList<Museum>? = response.body()?.data
-                    showData(data)
-
-                }
-            }
-
-            override fun onFailure(call: Call<ResponseMuseumServer>, t: Throwable) {
-                Log.d("error server Museum", t.message)
-                progress.visibility = View.GONE
-            }
-
-        })
-
-    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
@@ -144,5 +118,32 @@ class MuseumActivity : AppCompatActivity() {
 
     }
 
+    private fun showFilterMuseum(search: String) {
+        //filter
+        ConfigNetwork.getRetrofitMuseum().getFilterMuseum("$search").enqueue(object : Callback<ResponseMuseumServer>{
+            override fun onResponse(
+                call: Call<ResponseMuseumServer>,
+                response: Response<ResponseMuseumServer>
+            ) {
+                Log.d("response server Museum", response.message())
+
+                progress.visibility = View.GONE
+
+                if(response.isSuccessful) {
+
+                    val data: ArrayList<Museum>? = response.body()?.data
+                    showData(data)
+
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseMuseumServer>, t: Throwable) {
+                Log.d("error server Museum", t.message)
+                progress.visibility = View.GONE
+            }
+
+        })
+
+    }
 
 }
